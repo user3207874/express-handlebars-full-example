@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router(); 
+const handlebars = require('handlebars');
 
 
 // Routing 
@@ -19,6 +20,15 @@ router.get('/', (req, res) => {
 
         test: '<h3>Welcome to New Orlands</h3>',
     });
+});
+
+router.post('/', function(req, res){
+  console.log(req)
+  var template = handlebars.compile(req.body.body)
+  var result = template({})
+  res.render('index', {
+    result: result,
+  });
 });
 
 

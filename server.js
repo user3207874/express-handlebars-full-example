@@ -3,6 +3,8 @@ const express = require('express');
 const app = express();
 const expbs = require('express-handlebars');
 const path = require('path');
+const bodyParser   = require('body-parser');
+
 
 // Importing files
 const routes = require('./routes/handlers');
@@ -10,6 +12,9 @@ const routes = require('./routes/handlers');
 
 // Sending static files with Express 
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 
 const hbs = expbs.create({

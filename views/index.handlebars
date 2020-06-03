@@ -1,45 +1,8 @@
+<form id="frm" method="POST" action="/" >
+  <textarea name="body" form="frm"></textarea>
+  <button type="submit" name="action" value="Submit" >Submit</button>
+</form>
 
-{{> header}}
-
-
-
-<h2>Hello World!!!!</h2>
-<p>Welcome to my App</p>
-
-{{#if isDisplayName}}
-    <p>My name is {{ name }} </p>
-
-    {{else}}
-    <p>No name found!!!</p>
-{{/if}}
+<div style="height:300px"><textarea disabled style="height:100%;width:100%;border:none;resize:none">{{result}}</textarea></div>
 
 
-
-
-{{#if isAgeEnabled}}
-    <p> I am {{age}}</p>
-
-    {{else}}
-
-    <p>No age provided!</p>
-
-
-{{/if}}
-
-
-{{calculation 50}}
-
-{{!-- This is a listing --}}
-{{#list people}}
-  {{firstName}} {{lastName}}
-{{/list}}
-
-{{> footer}}
-
-
-
-
-{{! This is just a test}}
-{{{ test  }}}
-
-{{ test }}
